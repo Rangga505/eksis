@@ -38,13 +38,13 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    // Animasi perubahan warna background
+
     _bgColorController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
     );
 
-    // Animasi logo masuk dari samping
+
     _logoController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1200),
@@ -58,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen>
       curve: Curves.easeOut,
     ));
 
-    // Mulai animasi warna background
+
     Future.delayed(const Duration(milliseconds: 500), () {
       setState(() {
         _backgroundColor = const Color(0xFF43515D);
@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
       _logoController.forward();
     });
 
-    // Navigasi ke Login setelah 3 detik
+
     Future.delayed(const Duration(seconds: 3), () {
       Get.off(() => const LoginPage(), transition: Transition.fadeIn);
     });
