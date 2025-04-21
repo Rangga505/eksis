@@ -121,7 +121,6 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            
             const SizedBox(height: 40),
             Container(
               padding: const EdgeInsets.all(20),
@@ -132,7 +131,9 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Login', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  const Text('Login',
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 10),
                   const Text('Email'),
                   const SizedBox(height: 5),
@@ -179,7 +180,9 @@ class LoginPage extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
                       onPressed: () {},
-                      child: const Text('Masuk', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      child: const Text('Masuk',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
                     ),
                   ),
                   const SizedBox(height: 10),
