@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'forgot_password_page.dart';
+import 'package:get/get.dart';
+
+
+
+
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -64,12 +71,22 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Center(
-                    child: Text(
-                      'Lupa Password?',
-                      style: TextStyle(color: Colors.grey[800]),
-                    ),
-                  ),
+Center(
+  child: GestureDetector(
+    onTap: () {
+      Get.to(() => const ForgotPasswordPage());
+    },
+    child: Text(
+      'Lupa Password?',
+      style: TextStyle(
+        color: Colors.blueAccent,
+        decoration: TextDecoration.underline,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+),
+
                   const SizedBox(height: 20),
                   SizedBox(
                     width: double.infinity,
