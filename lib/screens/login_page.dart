@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'forgot_password_page.dart';
 import 'package:get/get.dart';
+import 'home_page.dart';
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -96,20 +98,27 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF43515D),
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                        ),
-                        onPressed: () {},
-                        child: const Text('Masuk',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
+SizedBox(
+  width: double.infinity,
+  child: ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: const Color(0xFF43515D), // Warna latar tombol
+      foregroundColor: Colors.white, // Warna teks (font)
+      padding: const EdgeInsets.symmetric(vertical: 12),
+    ),
+    onPressed: () {
+      Get.offAll(() => const HomePage());
+    },
+    child: const Text(
+      'Masuk',
+      style: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+),
+      const SizedBox(height: 10),
                     Center(
                       child: RichText(
                         text: TextSpan(
