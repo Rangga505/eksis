@@ -165,10 +165,10 @@ Padding(
                               child: ListView(
                                 scrollDirection: Axis.horizontal,
                                 children: [
-                                  _buildHorizontalCard('assets/images/pramuka.jpg'),
-                                  _buildHorizontalCard('assets/images/basket.jpg'),
-                                  _buildHorizontalCard('assets/images/pramuka.jpg'),
-                                  _buildHorizontalCard('assets/images/basket.jpg'),
+                                  _buildHorizontalCard('assets/logo/images/Pramuka.png'),
+                                  _buildHorizontalCard('assets/logo/images/Basket.png'),
+                                  _buildHorizontalCard('assets/logo/images/SepakBola1.png'),
+                                  _buildHorizontalCard('assets/logo/images/BolaVoli.png'),
                                 ],
                               ),
                             ),
@@ -195,10 +195,10 @@ Padding(
                               child: ListView(
                                 scrollDirection: Axis.horizontal,
                                 children: [
-                                  _buildHorizontalCard('assets/images/prestasi1.jpg'),
-                                  _buildHorizontalCard('assets/images/prestasi2.jpg'),
-                                  _buildHorizontalCard('assets/images/prestasi1.jpg'),
-                                  _buildHorizontalCard('assets/images/prestasi2.jpg'),
+                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
                                 ],
                               ),
                             ),
