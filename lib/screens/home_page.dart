@@ -65,7 +65,7 @@ Padding(
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.white, width: 3),
                       image: const DecorationImage(
-                        image: AssetImage('assets/images/profile_photo.png'),
+                        image: AssetImage('assets/logo/images/profile_photo.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
