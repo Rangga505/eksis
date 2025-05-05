@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'forgot_password_page.dart';
 import 'package:get/get.dart';
-import 'home_page.dart';
-import 'register.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +41,22 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Login',
-                        style:
-                            TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    const Text('Buat Akun',
+                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 10),
+                    const Text('Username'),
+                    const SizedBox(height: 5),
+                    TextField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white24,
+                        hintText: 'Masukkan Username Disini',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 10),
                     const Text('Email'),
                     const SizedBox(height: 5),
@@ -69,31 +80,10 @@ class LoginPage extends StatelessWidget {
                         filled: true,
                         fillColor: Colors.white24,
                         hintText: 'Masukkan Password Disini',
-                        suffixIcon:
-                            Icon(Icons.visibility, color: Colors.white70),
+                        suffixIcon: Icon(Icons.visibility, color: Colors.white70),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          Get.to(
-                            () => const ForgotPasswordPage(),
-                            transition: Transition.fadeIn,
-                            duration: const Duration(milliseconds: 600),
-                          );
-                        },
-                        child: Text(
-                          'Lupa Password?',
-                          style: TextStyle(
-                            color: Colors.blueAccent,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.bold,
-                          ),
                         ),
                       ),
                     ),
@@ -107,10 +97,11 @@ class LoginPage extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
                         onPressed: () {
-                          Get.offAll(() => const HomePage());
+                          // Handle registration logic here
+                          // Then navigate to login or home page
                         },
                         child: const Text(
-                          'Masuk',
+                          'Buat Akun',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -123,7 +114,7 @@ class LoginPage extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           Get.to(
-                            () => const RegisterPage(),
+                            () => const LoginPage(),
                             transition: Transition.fadeIn,
                             duration: const Duration(milliseconds: 600),
                           );
@@ -132,9 +123,9 @@ class LoginPage extends StatelessWidget {
                           text: const TextSpan(
                             style: TextStyle(color: Colors.black87),
                             children: [
-                              TextSpan(text: 'Kamu Belum Punya Akun? '),
+                              TextSpan(text: 'Kamu Sudah Punya Akun? '),
                               TextSpan(
-                                text: 'Buat disini',
+                                text: 'Login disini',
                                 style: TextStyle(color: Colors.blue),
                               ),
                             ],

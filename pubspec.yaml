@@ -23,6 +23,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo/splash.png
+    - assets/logo/LOGOMIRING.png
+    - assets/logo/images/profile_photo.png
 
 
 
