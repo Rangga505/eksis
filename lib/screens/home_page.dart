@@ -20,38 +20,37 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             // App Bar with Logo
-Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-  child: Stack(
-    alignment: Alignment.center,
-    children: [
-      Align(
-        alignment: Alignment.centerLeft,
-        child: SizedBox(
-          height: 60,
-          child: Image.asset('assets/logo/LOGOMIRING.png'),
-        ),
-      ),
-      Align(
-        alignment: Alignment.centerRight,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-              icon: const Icon(Icons.notifications_outlined, color: Colors.white, size: 26),
-              onPressed: () {},
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: SizedBox(
+                      height: 60,
+                      child: Image.asset('assets/logo/LOGOMIRING.png'),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.notifications_outlined, color: Colors.white, size: 26),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.settings, color: Colors.white, size: 26),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-            IconButton(
-              icon: const Icon(Icons.settings, color: Colors.white, size: 26),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),
-    ],
-  ),
-),
-
             
             // Profile Section
             Padding(
@@ -71,25 +70,29 @@ Padding(
                     ),
                   ),
                   const SizedBox(width: 16),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Selamat Datang',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Selamat Datang',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Herdiansyah Rangga Prasetyo',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        Text(
+                          'Herdiansyah Rangga Prasetyo',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -119,6 +122,7 @@ Padding(
             // Main content
             Expanded(
               child: Container(
+                width: double.infinity,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -126,88 +130,94 @@ Padding(
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Navigation Options
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            _buildNavOption('Ekstrakurikuler', Icons.sports_basketball),
-                            _buildNavOption('Pendaftaran', Icons.edit_document),
-                            _buildNavOption('Galeri', Icons.photo_library),
-                            _buildNavOption('Prestasi', Icons.emoji_events),
-                          ],
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Navigation Options
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              _buildNavOption('Ekstrakurikuler', Icons.sports_basketball),
+                              _buildNavOption('Pendaftaran', Icons.edit_document),
+                              _buildNavOption('Galeri', Icons.photo_library),
+                              _buildNavOption('Prestasi', Icons.emoji_events),
+                            ],
+                          ),
                         ),
-                      ),
-                      
-                      const SizedBox(height: 10),
-                      
-                      // Terpopuler Section with Horizontal Scroll
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Terpopuler',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                        
+                        const SizedBox(height: 10),
+                        
+                        // Terpopuler Section with Horizontal Scroll
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Terpopuler',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 15),
-                            SizedBox(
-                              height: 150,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  _buildHorizontalCard('assets/logo/images/Pramuka.png'),
-                                  _buildHorizontalCard('assets/logo/images/Basket.png'),
-                                  _buildHorizontalCard('assets/logo/images/SepakBola1.png'),
-                                  _buildHorizontalCard('assets/logo/images/BolaVoli.png'),
-                                ],
+                              const SizedBox(height: 15),
+                              SizedBox(
+                                height: 150,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    _buildHorizontalCard('assets/logo/images/Pramuka.png'),
+                                    _buildHorizontalCard('assets/logo/images/Basket.png'),
+                                    _buildHorizontalCard('assets/logo/images/SepakBola1.png'),
+                                    _buildHorizontalCard('assets/logo/images/BolaVoli.png'),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      
-                      // Prestasi Section with Horizontal Scroll
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Prestasi',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                        
+                        // Prestasi Section with Horizontal Scroll
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Prestasi',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 15),
-                            SizedBox(
-                              height: 180,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
-                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
-                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
-                                  _buildHorizontalCard('assets/logo/images/prestasi1.png'),
-                                ],
+                              const SizedBox(height: 15),
+                              SizedBox(
+                                height: 180,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                    _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                    _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                    _buildHorizontalCard('assets/logo/images/prestasi1.png'),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      
-                      const SizedBox(height: 90), // Space for bottom bar
-                    ],
+                        
+                        const SizedBox(height: 90), // Space for bottom bar
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -221,8 +231,8 @@ Padding(
         color: const Color(0xFF435059),
         showLabel: true,
         notchColor: const Color(0xFF435059),
-        removeMargins: false,
-        bottomBarWidth: MediaQuery.of(context).size.width,
+        removeMargins: true, // Hapus margin untuk menghilangkan ruang putih
+        bottomBarWidth: double.infinity, // Lebar penuh untuk navbar
         kBottomRadius: 28.0,
         kIconSize: 24.0,
         durationInMilliSeconds: 300,
