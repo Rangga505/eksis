@@ -198,7 +198,63 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       extendBody: true,
-      bottomNavigationBar: const CommonNavBar(currentIndex: 2),
+      bottomNavigationBar: AnimatedNotchBottomBar(
+        notchBottomBarController: _controller,
+        color: const Color(0xFF435059),
+        showLabel: true,
+        notchColor: const Color(0xFF435059),
+        removeMargins: true, // Hapus margin untuk menghilangkan ruang putih
+        bottomBarWidth: double.infinity, // Lebar penuh untuk navbar
+        kBottomRadius: 28.0,
+        kIconSize: 24.0,
+        durationInMilliSeconds: 300,
+        bottomBarItems: [
+          BottomBarItem(
+            inActiveItem: const Icon(Icons.sports_basketball, color: Colors.white70),
+            activeItem: const Icon(Icons.sports_basketball, color: Colors.white),
+            itemLabel: 'Ekskul',
+          ),
+          BottomBarItem(
+            inActiveItem: const Icon(Icons.emoji_events, color: Colors.white70),
+            activeItem: const Icon(Icons.emoji_events, color: Colors.white),
+            itemLabel: 'Prestasi',
+          ),
+          BottomBarItem(
+            inActiveItem: Container(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.all(10),
+              child: const Icon(Icons.home, color: Color(0xFF435059)),
+            ),
+            activeItem: Container(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.all(10),
+              child: const Icon(Icons.home, color: Color(0xFF435059)),
+            ),
+            itemLabel: 'Beranda',
+          ),
+          BottomBarItem(
+            inActiveItem: const Icon(Icons.photo_library, color: Colors.white70),
+            activeItem: const Icon(Icons.photo_library, color: Colors.white),
+            itemLabel: 'Galeri',
+          ),
+          BottomBarItem(
+            inActiveItem: const Icon(Icons.person, color: Colors.white70),
+            activeItem: const Icon(Icons.person, color: Colors.white),
+            itemLabel: 'Profil',
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _controller.index = index;
+          });
+        },
+      ),
     );
   }
 
