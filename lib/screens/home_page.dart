@@ -231,48 +231,34 @@ class _HomePageState extends State<HomePage> {
         color: const Color(0xFF435059),
         showLabel: true,
         notchColor: const Color(0xFF435059),
-        removeMargins: true, // Hapus margin untuk menghilangkan ruang putih
-        bottomBarWidth: double.infinity, // Lebar penuh untuk navbar
-        kBottomRadius: 28.0,
-        kIconSize: 24.0,
+        removeMargins: true,
+        bottomBarWidth: double.infinity,
         durationInMilliSeconds: 300,
+        kBottomRadius: 0, // Menghilangkan radius untuk tampilan yang lebih rapi
+        kIconSize: 24.0,
         bottomBarItems: [
           BottomBarItem(
-            inActiveItem: const Icon(Icons.sports_basketball, color: Colors.white70),
+            inActiveItem: const Icon(Icons.sports_basketball, color: Colors.white60),
             activeItem: const Icon(Icons.sports_basketball, color: Colors.white),
             itemLabel: 'Ekskul',
           ),
           BottomBarItem(
-            inActiveItem: const Icon(Icons.emoji_events, color: Colors.white70),
+            inActiveItem: const Icon(Icons.emoji_events, color: Colors.white60),
             activeItem: const Icon(Icons.emoji_events, color: Colors.white),
             itemLabel: 'Prestasi',
           ),
           BottomBarItem(
-            inActiveItem: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              padding: const EdgeInsets.all(10),
-              child: const Icon(Icons.home, color: Color(0xFF435059)),
-            ),
-            activeItem: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              padding: const EdgeInsets.all(10),
-              child: const Icon(Icons.home, color: Color(0xFF435059)),
-            ),
+            inActiveItem: const Icon(Icons.home, color: Colors.white60, size: 28),
+            activeItem: const Icon(Icons.home, color: Colors.white, size: 28),
             itemLabel: 'Beranda',
           ),
           BottomBarItem(
-            inActiveItem: const Icon(Icons.photo_library, color: Colors.white70),
+            inActiveItem: const Icon(Icons.photo_library, color: Colors.white60),
             activeItem: const Icon(Icons.photo_library, color: Colors.white),
             itemLabel: 'Galeri',
           ),
           BottomBarItem(
-            inActiveItem: const Icon(Icons.person, color: Colors.white70),
+            inActiveItem: const Icon(Icons.person, color: Colors.white60),
             activeItem: const Icon(Icons.person, color: Colors.white),
             itemLabel: 'Profil',
           ),
