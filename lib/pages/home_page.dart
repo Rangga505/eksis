@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
+import '../widgets/common_header.dart';
+import '../widgets/common_navbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,38 +21,8 @@ class _HomePageState extends State<HomePage> {
         bottom: false,
         child: Column(
           children: [
-            // App Bar with Logo
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: SizedBox(
-                      height: 60,
-                      child: Image.asset('assets/logo/LOGOMIRING.png'),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.notifications_outlined, color: Colors.white, size: 26),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.settings, color: Colors.white, size: 26),
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Common Header
+            const CommonHeader(),
             
             // Profile Section
             Padding(
@@ -226,63 +198,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       extendBody: true,
-      bottomNavigationBar: AnimatedNotchBottomBar(
-        notchBottomBarController: _controller,
-        color: const Color(0xFF435059),
-        showLabel: true,
-        notchColor: const Color(0xFF435059),
-        removeMargins: true, // Hapus margin untuk menghilangkan ruang putih
-        bottomBarWidth: double.infinity, // Lebar penuh untuk navbar
-        kBottomRadius: 28.0,
-        kIconSize: 24.0,
-        durationInMilliSeconds: 300,
-        bottomBarItems: [
-          BottomBarItem(
-            inActiveItem: const Icon(Icons.sports_basketball, color: Colors.white70),
-            activeItem: const Icon(Icons.sports_basketball, color: Colors.white),
-            itemLabel: 'Ekskul',
-          ),
-          BottomBarItem(
-            inActiveItem: const Icon(Icons.emoji_events, color: Colors.white70),
-            activeItem: const Icon(Icons.emoji_events, color: Colors.white),
-            itemLabel: 'Prestasi',
-          ),
-          BottomBarItem(
-            inActiveItem: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              padding: const EdgeInsets.all(10),
-              child: const Icon(Icons.home, color: Color(0xFF435059)),
-            ),
-            activeItem: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              padding: const EdgeInsets.all(10),
-              child: const Icon(Icons.home, color: Color(0xFF435059)),
-            ),
-            itemLabel: 'Beranda',
-          ),
-          BottomBarItem(
-            inActiveItem: const Icon(Icons.photo_library, color: Colors.white70),
-            activeItem: const Icon(Icons.photo_library, color: Colors.white),
-            itemLabel: 'Galeri',
-          ),
-          BottomBarItem(
-            inActiveItem: const Icon(Icons.person, color: Colors.white70),
-            activeItem: const Icon(Icons.person, color: Colors.white),
-            itemLabel: 'Profil',
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-            _controller.index = index;
-          });
-        },
-      ),
+      bottomNavigationBar: const CommonNavBar(currentIndex: 2),
     );
   }
 

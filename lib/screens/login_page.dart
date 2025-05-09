@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'forgot_password_page.dart';
 import 'package:get/get.dart';
-import 'home_page.dart';
+import 'package:eksis/pages/home_page.dart';
 import 'register.dart';
 
 class LoginPage extends StatelessWidget {
