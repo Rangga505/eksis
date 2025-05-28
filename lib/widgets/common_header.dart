@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+// Import halaman notifikasi dan pengaturan
+import 'package:eksis/pages/settings_page.dart';
+import 'package:eksis/pages/notification_page.dart';
 
 class CommonHeader extends StatelessWidget {
-  const CommonHeader({Key? key}) : super(key: key);
+  const CommonHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +27,23 @@ class CommonHeader extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.notifications_outlined, color: Colors.white, size: 26),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigasi ke halaman notifikasi
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NotificationPage()),
+                    );
+                  },
                 ),
                 IconButton(
                   icon: const Icon(Icons.settings, color: Colors.white, size: 26),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigasi ke halaman pengaturan
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SettingsPage()),
+                    );
+                  },
                 ),
               ],
             ),

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'screens/splash_screen.dart';
 import 'pages/home_page.dart';
-import 'pages/ekskul_page.dart';
 import 'pages/prestasi_page.dart';
 import 'pages/galeri_page.dart';
 import 'pages/profil_page.dart';
+import 'pages/ekskul_selection_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
   ),
   GetPage(
     name: '/ekskul',
-    page: () => const EkskulPage(),
+    page: () => const EkskulSelectionPage(),
     transition: Transition.fadeIn,
     transitionDuration: Duration(milliseconds: 500),
   ),
@@ -50,6 +51,12 @@ class MyApp extends StatelessWidget {
   ),
   GetPage(
     name: '/profil',
+    page: () => const ProfilPage(),
+    transition: Transition.fadeIn,
+    transitionDuration: Duration(milliseconds: 500),
+  ),
+    GetPage(
+    name: '/pendaftaran',
     page: () => const ProfilPage(),
     transition: Transition.fadeIn,
     transitionDuration: Duration(milliseconds: 500),
